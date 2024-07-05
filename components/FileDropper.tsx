@@ -10,6 +10,7 @@ import Link from "next/link";
 
 const FileDropper = ({ onFilesSelected, width, height }: any) => {
   const [files, setFiles] = useState<any>([]);
+  const ref = React.useRef<HTMLInputElement>(null);
 
   const handleFileChange = (event: any) => {
     const selectedFiles = event.target.files;
@@ -37,6 +38,13 @@ const FileDropper = ({ onFilesSelected, width, height }: any) => {
     // onFilesSelected(files);
   }, [files, onFilesSelected]);
 
+  useEffect(() => {
+    if (ref.current !== null) {
+      ref.current.setAttribute("directory", "");
+      ref.current.setAttribute("webkitdirectory", "");
+    }
+  }, [ref]);
+
   return (
     <section
       className="drag-drop flex flex-col gap-5 items-center"
@@ -61,8 +69,8 @@ const FileDropper = ({ onFilesSelected, width, height }: any) => {
           </>
         )}
         {files.length > 0 && (
-          <div className="file-list">
-            <div className="file-list__container">
+          <div className="file-list overflow-hidden">
+            <div className="file-list__container overflow-y-scroll">
               {files.map((file: any, index: any) => (
                 <div className="file-item" key={index}>
                   <div className="file-info">
@@ -91,18 +99,26 @@ const FileDropper = ({ onFilesSelected, width, height }: any) => {
         hidden
         id="browse"
         onChange={handleFileChange}
-        accept=".pdf,.docx,.pptx,.txt,.xlsx"
+        accept=".jpg,.jpeg,.png"
         multiple
+        ref={ref}
       />
-      <label htmlFor="browse" className="browse-btn flex gap-4 items-center">
+      <div className="flex gap-5 items-center">
         <span className="text-gray-600">или</span>
-        <Button>Выберите файлы(-ы)</Button>
+        <Button>
+          <label
+            htmlFor="browse"
+            className="browse-btn flex gap-4 items-center hover:cursor-pointer"
+          >
+            Выберите файлы(-ы)
+          </label>
+        </Button>
         {files.length !== 0 && (
           <Button asChild>
             <Link href="/recognized">Распознать</Link>
           </Button>
         )}
-      </label>
+      </div>
     </section>
   );
 };

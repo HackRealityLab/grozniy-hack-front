@@ -1,4 +1,4 @@
-import RecordingSkeleton from "@/components/Recording/RecordingSkeleton";
+import CameraTrap from "@/components/CameraTrap";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -10,11 +10,13 @@ const RecognizedPhotosPage = () => {
           <Link href="/">На главную</Link>
         </Button>
         <h2 className="text-foreground text-3xl font-bold">
-          Распознанные записи
+          Результат распознавания
         </h2>
       </section>
-      <section>
-        <RecordingSkeleton />
+      <section className="flex flex-wrap gap-10">
+        <CameraTrap />
+        <CameraTrap />
+        <CameraTrap />
       </section>
     </div>
   );

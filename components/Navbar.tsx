@@ -12,11 +12,12 @@ const Navbar = () => {
             src={Logo}
             alt="Министерство природных ресурсов и экологии Российской Федерации"
             width={250}
+            layout="responsive"
           />
         </div>
         <div className="flex flex-col gap-4">
           <NavLink href={"/"}>Главная</NavLink>
-          <NavLink href={"/archive"}>Архив записей</NavLink>
+          <NavLink href={"/archive"}>Архив фотоловушек</NavLink>
           <NavLink href={"/stats"}>Статистика</NavLink>
         </div>
       </section>

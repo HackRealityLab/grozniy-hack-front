@@ -1,18 +1,25 @@
-import RecordingWithButtons from "@/components/Recording/RecordingWithButtons";
+import CameraTrap from "@/components/CameraTrap";
+import { Button } from "@/components/ui/button";
 
 const ArchivePage = () => {
   return (
-    <div className="">
-      <h2 className="text-foreground text-3xl font-bold">Архив записей</h2>
+    <div className="w-[68vw]">
+      <h2 className="text-foreground text-3xl font-bold mb-10">
+        Архив фотоловушек
+      </h2>
       <section className="flex flex-wrap gap-10">
-        <RecordingWithButtons />
-        <RecordingWithButtons />
-        <RecordingWithButtons />
-        <RecordingWithButtons />
-        <RecordingWithButtons />
-        <RecordingWithButtons />
-        <RecordingWithButtons />
-        <RecordingWithButtons />
+        <CameraTrap />
+        <CameraTrap />
+        <CameraTrap />
+        <CameraTrap />
+        <CameraTrap />
+        <CameraTrap />
+        <CameraTrap />
+        <CameraTrap />
+        <CameraTrap />
+        <CameraTrap />
+        <CameraTrap />
+        <CameraTrap />
       </section>
     </div>
   );
