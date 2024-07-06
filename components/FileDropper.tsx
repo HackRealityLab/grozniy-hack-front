@@ -23,6 +23,7 @@ const FileDropper = ({ onFilesSelected, width, height }: any) => {
   const handleDrop = (event: any) => {
     event.preventDefault();
     const droppedFiles = event.dataTransfer.files;
+    console.log("@droppedFiles", droppedFiles);
     if (droppedFiles.length > 0) {
       const newFiles = Array.from(droppedFiles);
       setFiles((prevFiles: any) => [...prevFiles, ...newFiles]);
@@ -33,6 +34,11 @@ const FileDropper = ({ onFilesSelected, width, height }: any) => {
       prevFiles.filter((_: any, i: any) => i !== index)
     );
   };
+
+  useEffect(() => {
+    console.log("@@@files");
+    console.log("@files", files);
+  }, []);
 
   useEffect(() => {
     // onFilesSelected(files);
