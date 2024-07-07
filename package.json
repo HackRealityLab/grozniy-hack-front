@@ -9,9 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/material": "^5.16.0",
+    "@mui/x-charts": "^7.9.0",
     "@radix-ui/react-slot": "^1.1.0",
     "@rpldy/upload-drop-zone": "^1.8.1",
     "@rpldy/uploady": "^1.8.1",
+    "axios": "^1.7.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.400.0",

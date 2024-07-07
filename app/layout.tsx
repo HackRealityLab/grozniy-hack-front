@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import JobContextLayout from "@/components/JobContextProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,8 +19,10 @@ const RootLayout = ({
   return (
     <html lang="ru" className="h-full">
       <body className={inter.className + " " + "p-4 flex h-full"}>
-        <Navbar />
-        <main className="px-10 pt-10">{children}</main>
+        <JobContextLayout>
+          <Navbar />
+          <main className="px-10 pt-10">{children}</main>
+        </JobContextLayout>
       </body>
     </html>
   );
