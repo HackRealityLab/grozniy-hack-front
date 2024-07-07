@@ -1,4 +1,5 @@
 import FileDropper from "@/components/FileDropper";
+import UploadyFileDropper from "@/components/UploadyFileDropper";
 
 const Page = () => {
   return (
@@ -14,6 +15,7 @@ const Page = () => {
             Предоставляет информацию о количестве, видах животных и о времени
             пребывания их в кадре для каждой из фотоловушек
           </p>
+          {/* <UploadyFileDropper /> */}
           <FileDropper />
         </section>
       </div>

@@ -36,11 +36,6 @@ const FileDropper = ({ onFilesSelected, width, height }: any) => {
   };
 
   useEffect(() => {
-    console.log("@@@files");
-    console.log("@files", files);
-  }, []);
-
-  useEffect(() => {
     // onFilesSelected(files);
   }, [files, onFilesSelected]);
 
@@ -121,7 +116,7 @@ const FileDropper = ({ onFilesSelected, width, height }: any) => {
         </Button>
         {files.length !== 0 && (
           <Button asChild>
-            <Link href="/recognized">Распознать</Link>
+            <Link href="/recognized">Зарегистрировать</Link>
           </Button>
         )}
       </div>
